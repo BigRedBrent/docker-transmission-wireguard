@@ -35,7 +35,7 @@ RUN apt-get update && apt-get install -y \
     dumb-init python3 \
     tzdata dnsutils iputils-ping ufw iproute2 \
     openssh-client git jq curl wget unrar unzip bc \
-    wireguard nginx \
+    wireguard nginx natpmpc \
     && rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/* \
     && useradd -u 911 -U -d /config -s /bin/false abc \
     && usermod -G users abc
@@ -49,6 +49,8 @@ ADD nginx_server.conf /opt/nginx/server.conf
 ADD transmission-default-settings.json /opt/transmission/default-settings.json
 ADD updateSettings.py /opt/transmission/
 ADD userSetup.sh /opt/transmission/
+ADD healthcheck.sh /etc/scripts/healthcheck.sh
+ADD selfheal.sh /etc/scripts/selfheal.sh
 
 # Set some environment variables needed in various scripts
 ENV TRANSMISSION_HOME=/config/transmission-home \
@@ -56,10 +58,24 @@ ENV TRANSMISSION_HOME=/config/transmission-home \
     TRANSMISSION_INCOMPLETE_DIR=/data/incomplete \
     TRANSMISSION_WATCH_DIR=/data/watch \
     GLOBAL_APPLY_PERMISSIONS=true \
-    TRANSMISSION_UMASK=2
+    TRANSMISSION_UMASK=2 \
+    TRANSMISSION_BIND_ADDRESS_IPV4=0.0.0.0 \
+    PUID= \
+    PGID= \
+    CONFIG_FILE= \
+    HEALTH_CHECK_HOST=google.com \
+    SELFHEAL=false \
+    MAX_SELFHEAL_FAILURES=3 \
+    SELFHEAL_INTERVAL=60 \
+    ENABLE_PORT_CHECK=false
+
+HEALTHCHECK --interval=1m --timeout=30s --start-period=30s --retries=3 CMD /etc/scripts/healthcheck.sh
 
 # Get base_revision passed as a build argument and set it as env var
 ARG REVISION
 ENV REVISION=${REVISION:-""}
+
+# Compatibility with https://hub.docker.com/r/willfarrell/autoheal/
+LABEL autoheal=true
 
 CMD ["dumb-init", "/opt/wireguard/start.sh"]
