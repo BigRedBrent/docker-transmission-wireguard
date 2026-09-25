@@ -49,7 +49,7 @@ services:
       - PUID=1000
       - PGID=1000
 
-      # Optional settings, uncomment to use:
+      # You may uncomment these optional settings to use them:
       #- SELFHEAL=true
       #- MAX_SELFHEAL_FAILURES=3
       #- SELFHEAL_INTERVAL=60
