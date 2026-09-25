@@ -141,8 +141,7 @@ and is executable (`chmod +x`).
 | /scripts/transmission-post-stop.sh | This shell script will be executed after transmission stops |
 | /scripts/update-port.sh | This shell script will be started in the background after transmission starts, to keep the forwarded port updated |
 
-For ProtonVPN port forwarding, place this script in `/scripts`:\
-[update-port.sh](https://github.com/BigRedBrent/vpn-configs-contrib/blob/patch-3/openvpn/protonvpn/update-port.sh)
+For ProtonVPN port forwarding, place this script in `/scripts`: [update-port.sh](https://github.com/BigRedBrent/vpn-configs-contrib/blob/patch-3/openvpn/protonvpn/update-port.sh)
 
 The scripts run one at a time, and startup continues once each one finishes. `update-port.sh` is
 the exception, since it's meant to keep running for as long as the container does.
