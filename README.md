@@ -51,8 +51,8 @@ services:
 
       # You may uncomment these optional settings to use them:
       #- SELFHEAL=true
-      #- SELFHEAL_MAX_FAILURES=3
       #- SELFHEAL_INTERVAL=60
+      #- SELFHEAL_MAX_FAILURES=3
       #- HEALTH_CHECK_HOST=google.com
       #- ENABLE_PORT_CHECK=true # Only works if update-port.sh is added to /scripts
       #- CONFIG_FILE=/wg-config/my_wg.conf # This is not necessary if you place WireGuard .conf files in /wg-config
