@@ -41,10 +41,10 @@ services:
     ports:
       - 9091:9091
     volumes:
-      - /your/storage/path:/data # where transmission will store downloads
-      - /your/config/path:/config # where transmission-home (state) is stored
-      - /your/wireguard-configs/path:/wg-config # example mount for WireGuard configs
-      - /your/scripts/path:/scripts # optional custom scripts
+      - /path/to/transmission-wireguard/data:/data # where transmission will store downloads
+      - /path/to/transmission-wireguard/config:/config # where transmission-home (state) is stored
+      - /path/to/transmission-wireguard/wg-config:/wg-config # example mount for WireGuard configs
+      - /path/to/transmission-wireguard/scripts:/scripts # where optional custom scripts are stored
     environment:
       - PUID=1000 # Default=(empty) - When not set, Transmission runs as root
       - PGID=1000 # Default=(empty)
