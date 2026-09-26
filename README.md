@@ -50,6 +50,11 @@ services:
       - PGID=1000 # Default=(empty)
 
       # You may uncomment these optional settings to use them:
+      #- TRANSMISSION_DOWNLOAD_DIR=/data/completed # Default=/data/completed
+      #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true # Default=true, unless already saved
+      #- TRANSMISSION_INCOMPLETE_DIR=/data/incomplete # Default=/data/incomplete
+      #- TRANSMISSION_WATCH_DIR_ENABLED=true # Default=true, unless already saved
+      #- TRANSMISSION_WATCH_DIR=/data/watch # Default=/data/watch
       #- SELFHEAL=true # Default=false
       #- SELFHEAL_INTERVAL=60 # Default=60
       #- SELFHEAL_MAX_FAILURES=3 # Default=3
@@ -57,11 +62,6 @@ services:
       #- ENABLE_PORT_CHECK=true # Default=false - Only works if update-port.sh is added to /scripts
       #- PORT_CHECK_PUBLIC_IP_URL=https://api.ipify.org # Default=https://api.ipify.org
       #- CONFIG_FILE=/wg-config/my_wg.conf # This is not necessary if you place WireGuard .conf files in /wg-config
-      #- TRANSMISSION_DOWNLOAD_DIR=/data/completed # Default=/data/completed
-      #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true # Default=true, unless already saved
-      #- TRANSMISSION_INCOMPLETE_DIR=/data/incomplete # Default=/data/incomplete
-      #- TRANSMISSION_WATCH_DIR_ENABLED=true # Default=true, unless already saved
-      #- TRANSMISSION_WATCH_DIR=/data/watch # Default=/data/watch
       #- TRANSMISSION_RPC_ENABLED=true # Default=true, unless already saved
       #- TRANSMISSION_RPC_PORT=9091 # Default=9091, unless already saved
       #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true # Default=false, unless already saved
