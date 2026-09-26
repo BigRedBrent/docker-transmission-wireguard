@@ -46,36 +46,36 @@ services:
       - /your/wireguard-configs/:/wg-config # example mount for WireGuard configs
       - /your/scripts/path/:/scripts # optional custom scripts
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=1000 # The default is empty, which runs Transmission as root
+      - PGID=1000 # The default is empty
 
       # You may uncomment these optional settings to use them:
-      #- SELFHEAL=true
-      #- SELFHEAL_INTERVAL=60
-      #- SELFHEAL_MAX_FAILURES=3
-      #- HEALTH_CHECK_HOST=google.com
-      #- ENABLE_PORT_CHECK=true # Only works if update-port.sh is added to /scripts
+      #- SELFHEAL=true # The default is false
+      #- SELFHEAL_INTERVAL=60 # The default is 60
+      #- SELFHEAL_MAX_FAILURES=3 # The default is 3
+      #- HEALTH_CHECK_HOST=google.com # The default is google.com
+      #- ENABLE_PORT_CHECK=true # The default is false. Only works if update-port.sh is added to /scripts
       #- CONFIG_FILE=/wg-config/my_wg.conf # This is not necessary if you place WireGuard .conf files in /wg-config
-      #- TRANSMISSION_RPC_ENABLED=true
-      #- TRANSMISSION_RPC_PORT=9091
-      #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true
-      #- TRANSMISSION_RPC_USERNAME=username
-      #- TRANSMISSION_RPC_PASSWORD=password
-      #- TRANSMISSION_RPC_WHITELIST_ENABLED=false
-      #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1,10.10.13.37
-      #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false
-      #- TRANSMISSION_RPC_HOST_WHITELIST=
-      #- TRANSMISSION_DOWNLOAD_DIR=/data/completed
-      #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true
-      #- TRANSMISSION_INCOMPLETE_DIR=/data/incomplete
-      #- TRANSMISSION_WATCH_DIR_ENABLED=true
-      #- TRANSMISSION_WATCH_DIR=/data/watch
-      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED=true
-      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME=
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=true
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME=
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED=true
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME=
+      #- TRANSMISSION_RPC_ENABLED=true # The default is true
+      #- TRANSMISSION_RPC_PORT=9091 # The default is 9091
+      #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true # The default is false
+      #- TRANSMISSION_RPC_USERNAME=username # The default is username
+      #- TRANSMISSION_RPC_PASSWORD=password # The default is password
+      #- TRANSMISSION_RPC_WHITELIST_ENABLED=false # The default is false
+      #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1,10.10.13.37 # The default is 127.0.0.1,::1
+      #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false # The default is false
+      #- TRANSMISSION_RPC_HOST_WHITELIST= # The default is empty
+      #- TRANSMISSION_DOWNLOAD_DIR=/data/completed # The default is /data/completed
+      #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true # The default is true
+      #- TRANSMISSION_INCOMPLETE_DIR=/data/incomplete # The default is /data/incomplete
+      #- TRANSMISSION_WATCH_DIR_ENABLED=true # The default is true
+      #- TRANSMISSION_WATCH_DIR=/data/watch # The default is /data/watch
+      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED=true # The default is false
+      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME= # The default is empty
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=true # The default is false
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME= # The default is empty
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED=true # The default is false
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME= # The default is empty
     logging:
       driver: json-file
       options:
