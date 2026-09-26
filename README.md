@@ -46,36 +46,36 @@ services:
       - /your/wireguard-configs/:/wg-config # example mount for WireGuard configs
       - /your/scripts/path/:/scripts # optional custom scripts
     environment:
-      - PUID=1000 # The default is empty, which runs Transmission as root
-      - PGID=1000 # The default is empty
+      - PUID=1000 # Default=(empty), which runs Transmission as root
+      - PGID=1000 # Default=(empty)
 
       # You may uncomment these optional settings to use them:
-      #- SELFHEAL=true # The default is false
-      #- SELFHEAL_INTERVAL=60 # The default is 60
-      #- SELFHEAL_MAX_FAILURES=3 # The default is 3
-      #- HEALTH_CHECK_HOST=google.com # The default is google.com
-      #- ENABLE_PORT_CHECK=true # The default is false. Only works if update-port.sh is added to /scripts
+      #- SELFHEAL=true # Default=false
+      #- SELFHEAL_INTERVAL=60 # Default=60
+      #- SELFHEAL_MAX_FAILURES=3 # Default=3
+      #- HEALTH_CHECK_HOST=google.com # Default=google.com
+      #- ENABLE_PORT_CHECK=true # Default=false. Only works if update-port.sh is added to /scripts
       #- CONFIG_FILE=/wg-config/my_wg.conf # This is not necessary if you place WireGuard .conf files in /wg-config
-      #- TRANSMISSION_RPC_ENABLED=true # The default is true
-      #- TRANSMISSION_RPC_PORT=9091 # The default is 9091
-      #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true # The default is false
-      #- TRANSMISSION_RPC_USERNAME=username # The default is username
-      #- TRANSMISSION_RPC_PASSWORD=password # The default is password
-      #- TRANSMISSION_RPC_WHITELIST_ENABLED=false # The default is false
-      #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1,10.10.13.37 # The default is 127.0.0.1,::1
-      #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false # The default is false
-      #- TRANSMISSION_RPC_HOST_WHITELIST= # The default is empty
-      #- TRANSMISSION_DOWNLOAD_DIR=/data/completed # The default is /data/completed
-      #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true # The default is true
-      #- TRANSMISSION_INCOMPLETE_DIR=/data/incomplete # The default is /data/incomplete
-      #- TRANSMISSION_WATCH_DIR_ENABLED=true # The default is true
-      #- TRANSMISSION_WATCH_DIR=/data/watch # The default is /data/watch
-      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED=true # The default is false
-      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME= # The default is empty
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=true # The default is false
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME= # The default is empty
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED=true # The default is false
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME= # The default is empty
+      #- TRANSMISSION_RPC_ENABLED=true # Default=true, unless already saved in Transmission
+      #- TRANSMISSION_RPC_PORT=9091 # Default=9091, unless already saved in Transmission
+      #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true # Default=false, unless already saved in Transmission
+      #- TRANSMISSION_RPC_USERNAME=username # Default=username, unless already saved in Transmission
+      #- TRANSMISSION_RPC_PASSWORD=password # Default=password, unless already saved in Transmission
+      #- TRANSMISSION_RPC_WHITELIST_ENABLED=false # Default=false, unless already saved in Transmission
+      #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1,10.10.13.37 # Default=127.0.0.1,::1, unless already saved in Transmission
+      #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false # Default=false, unless already saved in Transmission
+      #- TRANSMISSION_RPC_HOST_WHITELIST= # Default=(empty), unless already saved in Transmission
+      #- TRANSMISSION_DOWNLOAD_DIR=/data/completed # Default=/data/completed
+      #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true # Default=true, unless already saved in Transmission
+      #- TRANSMISSION_INCOMPLETE_DIR=/data/incomplete # Default=/data/incomplete
+      #- TRANSMISSION_WATCH_DIR_ENABLED=true # Default=true, unless already saved in Transmission
+      #- TRANSMISSION_WATCH_DIR=/data/watch # Default=/data/watch
+      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED=true # Default=false, unless already saved in Transmission
+      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME= # Default=(empty), unless already saved in Transmission
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=true # Default=false, unless already saved in Transmission
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME= # Default=(empty), unless already saved in Transmission
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED=true # Default=false, unless already saved in Transmission
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME= # Default=(empty), unless already saved in Transmission
     logging:
       driver: json-file
       options:
