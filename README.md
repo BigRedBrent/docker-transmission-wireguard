@@ -41,12 +41,12 @@ services:
     ports:
       - 9091:9091
     volumes:
-      - /your/storage/path/:/data # where transmission will store downloads
-      - /your/config/path/:/config # where transmission-home (state) is stored
-      - /your/wireguard-configs/:/wg-config # example mount for WireGuard configs
-      - /your/scripts/path/:/scripts # optional custom scripts
+      - /your/storage/path:/data # where transmission will store downloads
+      - /your/config/path:/config # where transmission-home (state) is stored
+      - /your/wireguard-configs/path:/wg-config # example mount for WireGuard configs
+      - /your/scripts/path:/scripts # optional custom scripts
     environment:
-      - PUID=1000 # Default=(empty), which runs Transmission as root
+      - PUID=1000 # Default=(empty) - When not set, Transmission runs as root
       - PGID=1000 # Default=(empty)
 
       # You may uncomment these optional settings to use them:
@@ -54,7 +54,7 @@ services:
       #- SELFHEAL_INTERVAL=60 # Default=60
       #- SELFHEAL_MAX_FAILURES=3 # Default=3
       #- HEALTH_CHECK_HOST=google.com # Default=google.com
-      #- ENABLE_PORT_CHECK=true # Default=false. Only works if update-port.sh is added to /scripts
+      #- ENABLE_PORT_CHECK=true # Default=false - Only works if update-port.sh is added to /scripts
       #- CONFIG_FILE=/wg-config/my_wg.conf # This is not necessary if you place WireGuard .conf files in /wg-config
       #- TRANSMISSION_DOWNLOAD_DIR=/data/completed # Default=/data/completed
       #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true # Default=true, unless already saved
