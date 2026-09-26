@@ -154,5 +154,8 @@ The Transmission scripts receive the same arguments as in `haugene/transmission-
 scripts keep working: device, tun MTU, link MTU, local tunnel address, remote tunnel address (empty
 with WireGuard) and script context (`init`).
 
-`transmission-pre-stop.sh` runs while Transmission and the tunnel are still up. Docker waits 10 seconds
-by default before force-stopping a container, so set `stop_grace_period` if your stop scripts need longer.
+When the container is stopped, `transmission-pre-stop.sh` runs first, while Transmission and the VPN
+connection are still running, so it can still control Transmission and reach the internet.
+Docker gives a container 10 seconds to shut down before force-stopping it, and your stop scripts
+and Transmission's own shutdown all have to finish within that time. If they need longer, add
+`stop_grace_period` to your compose file at the same level as `restart:`, such as `stop_grace_period: 30s`.
