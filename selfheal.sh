@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Started by start.sh when SELFHEAL is enabled. Runs healthcheck.sh from the same folder on a schedule
-# for as long as the container runs. After MAX_SELFHEAL_FAILURES failed checks in a row, shuts down
+# for as long as the container runs. After SELFHEAL_MAX_FAILURES failed checks in a row, shuts down
 # so Docker's restart policy restarts the container. Checks that pass reset the failure count.
 
-MAX_FAILURES=${MAX_SELFHEAL_FAILURES:-3}
+MAX_FAILURES=${SELFHEAL_MAX_FAILURES:-3}
 [[ "$MAX_FAILURES" =~ ^[1-9][0-9]*$ ]] || MAX_FAILURES=3
 
 INTERVAL=${SELFHEAL_INTERVAL:-60}

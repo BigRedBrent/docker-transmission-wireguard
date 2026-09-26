@@ -65,7 +65,7 @@ ENV TRANSMISSION_HOME=/config/transmission-home \
     CONFIG_FILE= \
     HEALTH_CHECK_HOST=google.com \
     SELFHEAL=false \
-    MAX_SELFHEAL_FAILURES=3 \
+    SELFHEAL_MAX_FAILURES=3 \
     SELFHEAL_INTERVAL=60 \
     ENABLE_PORT_CHECK=false
 

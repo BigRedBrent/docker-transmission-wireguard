@@ -51,7 +51,7 @@ services:
 
       # You may uncomment these optional settings to use them:
       #- SELFHEAL=true
-      #- MAX_SELFHEAL_FAILURES=3
+      #- SELFHEAL_MAX_FAILURES=3
       #- SELFHEAL_INTERVAL=60
       #- HEALTH_CHECK_HOST=google.com
       #- ENABLE_PORT_CHECK=true # Only works if update-port.sh is added to /scripts
@@ -117,7 +117,7 @@ that `HEALTH_CHECK_HOST` answers a ping through the tunnel, that the WireGuard i
 and that Transmission is running.
 
 With `SELFHEAL=true`, the container also runs the health check on its own schedule, and if it fails
-`MAX_SELFHEAL_FAILURES` times in a row (the default is 3 consecutive failures), the container shuts
+`SELFHEAL_MAX_FAILURES` times in a row (the default is 3 consecutive failures), the container shuts
 itself down so Docker's restart policy starts it again. This requires a restart policy such as
 `always`, `unless-stopped` or `on-failure`.
 
@@ -125,7 +125,7 @@ itself down so Docker's restart policy starts it again. This requires a restart 
 | --- | --- |
 | `HEALTH_CHECK_HOST` | Host used by the health check for its DNS lookup and ping (default `google.com`). |
 | `SELFHEAL` | Set to `true` to restart the container when the health check keeps failing (default `false`). |
-| `MAX_SELFHEAL_FAILURES` | Number of failed health checks in a row before restarting (default `3`). |
+| `SELFHEAL_MAX_FAILURES` | Number of failed health checks in a row before restarting (default `3`). |
 | `SELFHEAL_INTERVAL` | Seconds between self-heal health checks (default `60`). |
 
 ## Custom scripts
