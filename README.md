@@ -56,26 +56,26 @@ services:
       #- HEALTH_CHECK_HOST=google.com # Default=google.com
       #- ENABLE_PORT_CHECK=true # Default=false. Only works if update-port.sh is added to /scripts
       #- CONFIG_FILE=/wg-config/my_wg.conf # This is not necessary if you place WireGuard .conf files in /wg-config
-      #- TRANSMISSION_RPC_ENABLED=true # Default=true, unless already saved in Transmission
-      #- TRANSMISSION_RPC_PORT=9091 # Default=9091, unless already saved in Transmission
-      #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true # Default=false, unless already saved in Transmission
-      #- TRANSMISSION_RPC_USERNAME=username # Default=username, unless already saved in Transmission
-      #- TRANSMISSION_RPC_PASSWORD=password # Default=password, unless already saved in Transmission
-      #- TRANSMISSION_RPC_WHITELIST_ENABLED=false # Default=false, unless already saved in Transmission
-      #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1,10.10.13.37 # Default=127.0.0.1,::1, unless already saved in Transmission
-      #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false # Default=false, unless already saved in Transmission
-      #- TRANSMISSION_RPC_HOST_WHITELIST= # Default=(empty), unless already saved in Transmission
+      #- TRANSMISSION_RPC_ENABLED=true # Default=true, unless already saved
+      #- TRANSMISSION_RPC_PORT=9091 # Default=9091, unless already saved
+      #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true # Default=false, unless already saved
+      #- TRANSMISSION_RPC_USERNAME=username # Default=username, unless already saved
+      #- TRANSMISSION_RPC_PASSWORD=password # Default=password, unless already saved
+      #- TRANSMISSION_RPC_WHITELIST_ENABLED=false # Default=false, unless already saved
+      #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1,10.10.13.37 # Default=127.0.0.1,::1, unless already saved
+      #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false # Default=false, unless already saved
+      #- TRANSMISSION_RPC_HOST_WHITELIST= # Default=(empty), unless already saved
       #- TRANSMISSION_DOWNLOAD_DIR=/data/completed # Default=/data/completed
-      #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true # Default=true, unless already saved in Transmission
+      #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true # Default=true, unless already saved
       #- TRANSMISSION_INCOMPLETE_DIR=/data/incomplete # Default=/data/incomplete
-      #- TRANSMISSION_WATCH_DIR_ENABLED=true # Default=true, unless already saved in Transmission
+      #- TRANSMISSION_WATCH_DIR_ENABLED=true # Default=true, unless already saved
       #- TRANSMISSION_WATCH_DIR=/data/watch # Default=/data/watch
-      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED=true # Default=false, unless already saved in Transmission
-      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME= # Default=(empty), unless already saved in Transmission
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=true # Default=false, unless already saved in Transmission
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME= # Default=(empty), unless already saved in Transmission
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED=true # Default=false, unless already saved in Transmission
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME= # Default=(empty), unless already saved in Transmission
+      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED=true # Default=false, unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME= # Default=(empty), unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=true # Default=false, unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME= # Default=(empty), unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED=true # Default=false, unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME= # Default=(empty), unless already saved
     logging:
       driver: json-file
       options:
