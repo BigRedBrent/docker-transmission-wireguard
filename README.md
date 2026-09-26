@@ -55,6 +55,7 @@ services:
       #- SELFHEAL_MAX_FAILURES=3 # Default=3
       #- HEALTH_CHECK_HOST=google.com # Default=google.com
       #- ENABLE_PORT_CHECK=true # Default=false - Only works if update-port.sh is added to /scripts
+      #- PORT_CHECK_PUBLIC_IP_URL=https://api.ipify.org # Default=https://api.ipify.org
       #- CONFIG_FILE=/wg-config/my_wg.conf # This is not necessary if you place WireGuard .conf files in /wg-config
       #- TRANSMISSION_DOWNLOAD_DIR=/data/completed # Default=/data/completed
       #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true # Default=true, unless already saved
