@@ -66,7 +66,7 @@ services:
       #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true # Default=false, unless already saved
       #- TRANSMISSION_RPC_USERNAME=username # Default=username, unless already saved
       #- TRANSMISSION_RPC_PASSWORD=password # Default=password, unless already saved
-      #- TRANSMISSION_RPC_WHITELIST_ENABLED=false # Default=false, unless already saved
+      #- TRANSMISSION_RPC_WHITELIST_ENABLED=false # Default=false
       #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1,10.10.13.37 # Default=127.0.0.1,::1, unless already saved
       #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false # Default=false, unless already saved
       #- TRANSMISSION_RPC_HOST_WHITELIST= # Default=(empty), unless already saved
