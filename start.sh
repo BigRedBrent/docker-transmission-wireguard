@@ -23,8 +23,23 @@ run_user_script() {
 
 run_user_script wireguard-pre-start.sh "$@"
 
-echo "Current public IP is:"
-curl --silent -w "\n" ipecho.net/plain
+get_public_ip() {
+    local service="${PUBLIC_IP_URL:-https://ipecho.net/plain}"
+    if [[ ! "$service" =~ ^https?:// ]]; then
+        echo "INVALID_SERVICE_URL"
+        return 0
+    fi
+    local ip=$(curl -4 -s --fail --max-time 10 "$service" 2>/dev/null | tr -d '[:space:]')
+    if [[ -z "$ip" ]]; then
+        echo "NO_RESPONSE_FROM_SERVICE"
+    elif [[ ! "$ip" =~ ^([0-9]{1,3}\.){3}[0-9]{1,3}$ ]]; then
+        echo "INVALID_RESPONSE_FORMAT"
+    else
+        echo "$ip"
+    fi
+}
+
+echo "Current public IP is: $(get_public_ip)"
 
 if ip netns ls | grep -q "physical"
 then

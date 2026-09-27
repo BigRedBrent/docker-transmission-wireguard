@@ -60,7 +60,7 @@ services:
       #- SELFHEAL_MAX_FAILURES=3
       #- HEALTH_CHECK_HOST=google.com
       #- ENABLE_PORT_CHECK=false # Only works if the added update-port.sh in /scripts supports it
-      #- PUBLIC_IP_URL=https://api.ipify.org
+      #- PUBLIC_IP_URL=https://ipecho.net/plain
       #- CONFIG_FILE=/wg-config/my_wg.conf # This is not necessary if you place WireGuard .conf files in /wg-config
       #- TRANSMISSION_RPC_ENABLED=true # unless already saved
       #- TRANSMISSION_RPC_PORT=9091 # unless already saved
