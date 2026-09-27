@@ -135,16 +135,19 @@ To run your own code at certain points while the container starts or stops, moun
 `/scripts` and add any of these scripts to it. Each one is optional and only runs if it exists
 and is executable (`chmod +x`).
 
-| Script | Function |
-| --- | --- |
-| /scripts/wireguard-pre-start.sh | This shell script will be executed before WireGuard starts |
-| /scripts/wireguard-post-config.sh | This shell script will be executed after WireGuard config |
-| /scripts/transmission-pre-start.sh | This shell script will be executed before transmission starts |
-| /scripts/transmission-post-start.sh | This shell script will be executed after transmission starts |
-| /scripts/routes-post-start.sh | This shell script will be executed after routes are added |
-| /scripts/transmission-pre-stop.sh | This shell script will be executed before transmission stops |
-| /scripts/transmission-post-stop.sh | This shell script will be executed after transmission stops |
-| /scripts/update-port.sh | This shell script will be started in the background after transmission starts, to keep the forwarded port updated |
+<table>
+  <thead><tr><th width="320">Script</th><th>Function</th></tr></thead>
+  <tbody>
+    <tr><td><code>/scripts/wireguard-pre-start.sh</code></td><td>This shell script will be executed before WireGuard starts</td></tr>
+    <tr><td><code>/scripts/wireguard-post-config.sh</code></td><td>This shell script will be executed after WireGuard config</td></tr>
+    <tr><td><code>/scripts/transmission-pre-start.sh</code></td><td>This shell script will be executed before transmission starts</td></tr>
+    <tr><td><code>/scripts/transmission-post-start.sh</code></td><td>This shell script will be executed after transmission starts</td></tr>
+    <tr><td><code>/scripts/routes-post-start.sh</code></td><td>This shell script will be executed after routes are added</td></tr>
+    <tr><td><code>/scripts/transmission-pre-stop.sh</code></td><td>This shell script will be executed before transmission stops</td></tr>
+    <tr><td><code>/scripts/transmission-post-stop.sh</code></td><td>This shell script will be executed after transmission stops</td></tr>
+    <tr><td><code>/scripts/update-port.sh</code></td><td>This shell script will be started in the background after transmission starts, to keep the forwarded port updated</td></tr>
+  </tbody>
+</table>
 
 For ProtonVPN port forwarding, place this script in `/scripts`: [update-port.sh](https://github.com/BigRedBrent/vpn-configs-contrib/blob/patch-3/openvpn/protonvpn/update-port.sh)
 
