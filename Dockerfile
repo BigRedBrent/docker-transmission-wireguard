@@ -56,20 +56,14 @@ ADD selfheal.sh /etc/scripts/selfheal.sh
 ENV TRANSMISSION_HOME=/config/transmission-home \
     TRANSMISSION_DOWNLOAD_DIR=/data/completed \
     TRANSMISSION_INCOMPLETE_DIR=/data/incomplete \
+    TRANSMISSION_INCOMPLETE_DIR_ENABLED=true \
     TRANSMISSION_WATCH_DIR=/data/watch \
+    TRANSMISSION_WATCH_DIR_ENABLED=true \
     GLOBAL_APPLY_PERMISSIONS=true \
-    TRANSMISSION_UMASK=2 \
+    TRANSMISSION_UMASK=002 \
     TRANSMISSION_BIND_ADDRESS_IPV4=0.0.0.0 \
     TRANSMISSION_PORT_FORWARDING_ENABLED=false \
-    TRANSMISSION_RPC_WHITELIST_ENABLED=false \
-    PUID= \
-    PGID= \
-    CONFIG_FILE= \
-    HEALTH_CHECK_HOST=google.com \
-    SELFHEAL=false \
-    SELFHEAL_MAX_FAILURES=3 \
-    SELFHEAL_INTERVAL=60 \
-    ENABLE_PORT_CHECK=false
+    TRANSMISSION_RPC_WHITELIST_ENABLED=false
 
 HEALTHCHECK --interval=1m --timeout=30s --start-period=30s --retries=3 CMD /etc/scripts/healthcheck.sh
 

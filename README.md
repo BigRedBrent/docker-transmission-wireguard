@@ -49,34 +49,34 @@ services:
       - PUID=1000 # Default=(empty) - When not set, Transmission runs as root
       - PGID=1000 # Default=(empty)
 
-      # You may uncomment these optional settings to use them:
-      #- TRANSMISSION_DOWNLOAD_DIR=/data/completed # Default=/data/completed
-      #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true # Default=true, unless already saved
-      #- TRANSMISSION_INCOMPLETE_DIR=/data/incomplete # Default=/data/incomplete
-      #- TRANSMISSION_WATCH_DIR_ENABLED=true # Default=true, unless already saved
-      #- TRANSMISSION_WATCH_DIR=/data/watch # Default=/data/watch
-      #- SELFHEAL=true # Default=false
-      #- SELFHEAL_INTERVAL=60 # Default=60
-      #- SELFHEAL_MAX_FAILURES=3 # Default=3
-      #- HEALTH_CHECK_HOST=google.com # Default=google.com
-      #- ENABLE_PORT_CHECK=true # Default=false - Only works if the added update-port.sh in /scripts supports it
-      #- PORT_CHECK_PUBLIC_IP_URL=https://api.ipify.org # Default=https://api.ipify.org
+      # You may uncomment these optional default settings to change them:
+      #- TRANSMISSION_DOWNLOAD_DIR=/data/completed
+      #- TRANSMISSION_INCOMPLETE_DIR_ENABLED=true
+      #- TRANSMISSION_INCOMPLETE_DIR=/data/incomplete
+      #- TRANSMISSION_WATCH_DIR_ENABLED=true
+      #- TRANSMISSION_WATCH_DIR=/data/watch
+      #- SELFHEAL=false
+      #- SELFHEAL_INTERVAL=60
+      #- SELFHEAL_MAX_FAILURES=3
+      #- HEALTH_CHECK_HOST=google.com
+      #- ENABLE_PORT_CHECK=false # Only works if the added update-port.sh in /scripts supports it
+      #- PORT_CHECK_PUBLIC_IP_URL=https://api.ipify.org
       #- CONFIG_FILE=/wg-config/my_wg.conf # This is not necessary if you place WireGuard .conf files in /wg-config
-      #- TRANSMISSION_RPC_ENABLED=true # Default=true, unless already saved
-      #- TRANSMISSION_RPC_PORT=9091 # Default=9091, unless already saved
-      #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true # Default=false, unless already saved
-      #- TRANSMISSION_RPC_USERNAME=username # Default=username, unless already saved
-      #- TRANSMISSION_RPC_PASSWORD=password # Default=password, unless already saved
-      #- TRANSMISSION_RPC_WHITELIST_ENABLED=false # Default=false
-      #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1,10.10.13.37 # Default=127.0.0.1,::1, unless already saved
-      #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false # Default=false, unless already saved
-      #- TRANSMISSION_RPC_HOST_WHITELIST= # Default=(empty), unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED=true # Default=false, unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME= # Default=(empty), unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=true # Default=false, unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME= # Default=(empty), unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED=true # Default=false, unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME= # Default=(empty), unless already saved
+      #- TRANSMISSION_RPC_ENABLED=true # Default unless already saved
+      #- TRANSMISSION_RPC_PORT=9091 # Default unless already saved
+      #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=false # Default unless already saved
+      #- TRANSMISSION_RPC_USERNAME=username # Default unless already saved
+      #- TRANSMISSION_RPC_PASSWORD=password # Default unless already saved
+      #- TRANSMISSION_RPC_WHITELIST_ENABLED=false
+      #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1 # Default unless already saved - Include 10.10.13.37 if enabled
+      #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false # Default unless already saved
+      #- TRANSMISSION_RPC_HOST_WHITELIST= # Default unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED=false # Default unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME= # Default unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=false # Default unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME= # Default unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED=false # Default unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME= # Default unless already saved
     logging:
       driver: json-file
       options:
