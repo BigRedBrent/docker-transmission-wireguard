@@ -128,8 +128,8 @@ itself down so Docker's restart policy starts it again. This requires a restart 
 | --- | --- |
 | `HEALTH_CHECK_HOST` | Host used by the health check for its DNS lookup and ping (default `google.com`). |
 | `SELFHEAL` | Set to `true` to restart the container when the health check keeps failing (default `false`). |
-| `SELFHEAL_MAX_FAILURES` | Number of failed health checks in a row before restarting (default `3`). |
 | `SELFHEAL_INTERVAL` | Seconds between self-heal health checks (default `60`). |
+| `SELFHEAL_MAX_FAILURES` | Number of failed health checks in a row before restarting (default `3`). |
 
 ## Custom scripts
 
