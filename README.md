@@ -85,9 +85,11 @@ services:
 
 ## WireGuard config
 
-Mount a folder with your WireGuard configs to `/wg-config`. If `CONFIG_FILE` isn't set, or the file it points to
-doesn't exist, the container picks a random `.conf` file from `/wg-config` each time it starts. Random selection
-skips the config used last time when another one is available, so a restart usually moves to a different server.
+Mount a folder with your WireGuard configs to `/wg-config`.
+If `CONFIG_FILE` isn't set, or the file it points to doesn't exist,
+the container picks a random `.conf` file from `/wg-config` each time it starts.
+Random selection skips the config used last time when another one is available,
+so a restart usually moves to a different server.
 
 | Variable | Purpose |
 | --- | --- |
