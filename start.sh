@@ -147,8 +147,7 @@ ip route add default dev wg0
 #
 # Wireguard interface is now set up and should be connected
 #
-echo "Wireguard is up - new IP:"
-curl --silent -w "\n" ipecho.net/plain
+echo "Wireguard is up - new IP: $(get_public_ip)"
 
 run_user_script routes-post-start.sh "$@"
 
