@@ -62,21 +62,21 @@ services:
       #- ENABLE_PORT_CHECK=false # Only works if the added update-port.sh in /scripts supports it
       #- PORT_CHECK_PUBLIC_IP_URL=https://api.ipify.org
       #- CONFIG_FILE=/wg-config/my_wg.conf # This is not necessary if you place WireGuard .conf files in /wg-config
-      #- TRANSMISSION_RPC_ENABLED=true # Default unless already saved
-      #- TRANSMISSION_RPC_PORT=9091 # Default unless already saved
-      #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=false # Default unless already saved
-      #- TRANSMISSION_RPC_USERNAME=username # Default unless already saved
-      #- TRANSMISSION_RPC_PASSWORD=password # Default unless already saved
+      #- TRANSMISSION_RPC_ENABLED=true # unless already saved
+      #- TRANSMISSION_RPC_PORT=9091 # unless already saved
+      #- TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=false # unless already saved
+      #- TRANSMISSION_RPC_USERNAME=username # unless already saved
+      #- TRANSMISSION_RPC_PASSWORD=password # unless already saved
       #- TRANSMISSION_RPC_WHITELIST_ENABLED=false
-      #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1 # Default unless already saved - Include 10.10.13.37 if enabled
-      #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false # Default unless already saved
-      #- TRANSMISSION_RPC_HOST_WHITELIST= # Default unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED=false # Default unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME= # Default unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=false # Default unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME= # Default unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED=false # Default unless already saved
-      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME= # Default unless already saved
+      #- TRANSMISSION_RPC_WHITELIST=127.0.0.1,::1 # unless already saved - Include 10.10.13.37 if enabled
+      #- TRANSMISSION_RPC_HOST_WHITELIST_ENABLED=false # unless already saved
+      #- TRANSMISSION_RPC_HOST_WHITELIST= # unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_ENABLED=false # unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_ADDED_FILENAME= # unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_ENABLED=false # unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_FILENAME= # unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_ENABLED=false # unless already saved
+      #- TRANSMISSION_SCRIPT_TORRENT_DONE_SEEDING_FILENAME= # unless already saved
     logging:
       driver: json-file
       options:
